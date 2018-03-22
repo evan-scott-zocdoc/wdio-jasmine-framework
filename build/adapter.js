@@ -312,6 +312,8 @@ var JasmineAdapter = function () {
                 message.fullName = params.payload.fullName || null;
                 message.file = params.payload.file;
 
+                console.log('PAYLOAD', params.payload);
+
                 if (params.payload.type && params.payload.type === 'test') {
                     message.parent = this.lastSpec.description;
                     message.passed = params.payload.failedExpectations.length === 0;
